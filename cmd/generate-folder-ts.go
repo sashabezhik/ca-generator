@@ -54,6 +54,11 @@ var (
 var generateFolderTSCmd = &cobra.Command{
 	Use:   "generate-folder-ts",
 	Short: "generate clean-architecture folder-for-feature (TS)",
+	Long: `generate clean-architecture folder-for-feature in Typescript.
+	
+example:
+
+ca-generator generate-folder-ts -n sign-up`,
 
 	Run: generateFolderTS,
 }
