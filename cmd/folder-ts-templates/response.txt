@@ -1,0 +1,9 @@
+import { ApiProperty } from '@nestjs/swagger'
+
+export class {{feature_name_camel_case}}Response {
+
+
+    constructor(options: {{feature_name_camel_case}}Response) {
+
+    }
+}

@@ -1,0 +1,19 @@
+import { Module } from '@nestjs/common'
+import { CoreModule } from '../../_core_/core.module'
+import { {{feature_name_camel_case}}Controller } from './presentation/{{feature_name}}.controller'
+import { {{feature_name_camel_case}}Interactor } from './domain/{{feature_name}}.interactor'
+import { {{feature_name_camel_case}}Repository } from './domain/{{feature_name}}.repository'
+import { {{feature_name_camel_case}}PostgresRepository } from './infrastructure/{{feature_name}}.postgres-repository'
+
+@Module({
+    imports: [CoreModule],
+    controllers: [{{feature_name_camel_case}}Controller],
+    providers: [
+        {{feature_name_camel_case}}Interactor,
+        {
+            provide: {{feature_name_camel_case}}Repository,
+            useClass: {{feature_name_camel_case}}PostgresRepository
+        }
+    ]
+})
+export class {{feature_name_camel_case}}Module {}

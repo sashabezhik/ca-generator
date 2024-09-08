@@ -1,0 +1,7 @@
+import { Injectable } from '@nestjs/common'
+import { {{feature_name_camel_case}}Repository } from '../domain/{{feature_name}}.repository'
+
+@Injectable()
+export class {{feature_name_camel_case}}PostgresRepository implements {{feature_name_camel_case}}Repository {
+    constructor() {}
+}

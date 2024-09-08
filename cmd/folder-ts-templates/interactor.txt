@@ -1,0 +1,12 @@
+import { Injectable } from '@nestjs/common'
+import { {{feature_name_camel_case}}Repository } from './{{feature_name}}.repository'
+import { {{feature_name_camel_case}}Input } from './objects/{{feature_name}}.input'
+
+@Injectable()
+export class {{feature_name_camel_case}}Interactor {
+    constructor(private readonly repository: {{feature_name_camel_case}}Repository) {}
+
+    public async execute(input: {{feature_name_camel_case}}Input): Promise<any> {
+
+    }
+}

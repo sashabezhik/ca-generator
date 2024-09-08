@@ -1,0 +1,6 @@
+import { ApiProperty } from '@nestjs/swagger'
+import {  } from 'class-validator'
+
+export class {{feature_name_camel_case}}Request {
+
+}

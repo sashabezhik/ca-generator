@@ -1,0 +1,22 @@
+import { Controller, Post, Body } from '@nestjs/common'
+import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger'
+import { {{feature_name_camel_case}}Interactor } from '../domain/{{feature_name}}.interactor'
+import { {{feature_name_camel_case}}Input } from '../domain/objects/{{feature_name}}.input'
+import { {{feature_name_camel_case}}Request } from './{{feature_name}}.request'
+import { {{feature_name_camel_case}}Response } from './{{feature_name}}.response'
+
+@ApiTags('')
+@Controller()
+export class {{feature_name_camel_case}}Controller {
+    constructor(private readonly interactor: {{feature_name_camel_case}}Interactor) {}
+
+    @Post('')
+    @ApiOperation({ description: '' })
+    @ApiCreatedResponse({ type: {{feature_name_camel_case}}Response })
+    public async execute(@Body() request: {{feature_name_camel_case}}Request): Promise<{{feature_name_camel_case}}Response> {
+        const input = new {{feature_name_camel_case}}Input(request)
+        const output = await this.interactor.execute(input)
+
+        return new {{feature_name_camel_case}}Response(output)
+    }
+}
